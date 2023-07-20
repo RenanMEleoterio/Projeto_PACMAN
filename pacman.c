@@ -1,26 +1,22 @@
 #include <stdio.h>
 #include "pacman.h"
 #include "mapa.h"
+#include <stdlib.h>
 
 MAPA mapa;
 
 int main(){
 
-    FILE * f;
+    le_mapa(&mapa);
 
-    f = fopen("mapa.txt", "r");
-
-    if(f == NULL){
-
-        printf("ERRO! Ao abrir o arquivo");
-
-    }
+    imprime_mapa(&mapa);
     
-    fscanf(f, "%d %d", &(mapa.linhas), &(mapa.colunas));
-
-    fclose(f);
-
-
+    for (int i = 0; i < mapa.linhas; i++)
+    {
+        free(mapa.matriz[i]);
+    }
+    free(mapa.matriz);
+    
     return 0;
 
 }
