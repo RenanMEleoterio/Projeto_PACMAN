@@ -4,18 +4,23 @@
 #include <stdlib.h>
 
 MAPA mapa;
+POSICAO posicao;
 
 int main(){
 
     le_mapa(&mapa);
 
-    imprime_mapa(&mapa);
-    
-    for (int i = 0; i < mapa.linhas; i++)
+    encontra_personagem(&mapa, &posicao, JOGADOR);
+
+    do
     {
-        free(mapa.matriz[i]);
-    }
-    free(mapa.matriz);
+        imprime_mapa(&mapa);
+
+    } while (!acabou());
+
+    printf("%c\n", mapa.matriz [posicao.linha] [posicao.coluna]);
+
+    libera_mapa(&mapa);
     
     return 0;
 
