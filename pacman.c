@@ -2,9 +2,7 @@
 #include "pacman.h"
 #include "mapa.h"
 
-char mapa [22] [61];
-int linhas;
-int colunas;
+MAPA mapa;
 
 int main(){
 
@@ -18,9 +16,7 @@ int main(){
 
     }
     
-    fscanf(f, "%d %d", &linhas, &colunas);
-
-    printf("%d %d\n", linhas, colunas);
+    fscanf(f, "%d %d", &(mapa.linhas), &(mapa.colunas));
 
     fclose(f);
 
