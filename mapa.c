@@ -69,36 +69,3 @@ int encontra_personagem(MAPA *m, POSICAO *posicao, char personagem){
     return 0;
 
 }
-
-/*void anda_pelo_mapa(MAPA *m, int linha_atual, int coluna_atual, char caminho){
-
-    int linha_destino = linha_atual;
-    int coluna_destino = coluna_atual;
-
-    switch (caminho)
-    {
-    case 'w':
-        m->matriz[linha_destino -1] [ coluna_destino] = JOGADOR;
-        break;
-    
-    case 's':
-        m->matriz [linha_destino + 1] [coluna_destino] = JOGADOR;
-        break;
-
-    case 'a':
-        m->matriz [linha_destino] [coluna_destino - 1] = JOGADOR;
-        break;
-
-    case 'd':
-        m->matriz [linha_destino] [coluna_destino] = JOGADOR;
-        break;
-
-    }
-
-    m->matriz [linha_atual] [coluna_atual] = '.';
-
-    linha_atual = linha_destino;
-    coluna_atual = coluna_destino;
-
-}
-*/
