@@ -38,7 +38,7 @@ void move(char caminho){
         break;
     }
 
-    if(!posicao_vazia(&mapa, proxima_linha, proxima_coluna)) return;
+    if(!posicao_vazia(&mapa, proxima_linha, proxima_coluna, JOGADOR)) return;
 
     anda_no_mapa(&mapa, posicao.linha, posicao.coluna, proxima_linha, proxima_coluna);
 

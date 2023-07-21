@@ -79,9 +79,9 @@ int anda_no_mapa(MAPA *m, int linha_atual, int coluna_atual, int proxima_linha, 
 
 }
 
-int posicao_vazia(MAPA *m,int proxima_linha, int proxima_coluna){
+int posicao_vazia(MAPA *m,int proxima_linha, int proxima_coluna, char personagem){
 
-    if(m->matriz[proxima_linha] [proxima_coluna] == VAZIO){
+    if(m->matriz[proxima_linha] [proxima_coluna] == VAZIO || m->matriz[proxima_linha] [proxima_coluna] == personagem){
 
         return 1;
 
