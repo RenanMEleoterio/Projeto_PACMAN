@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "mapa.h"
+#include "pacman.h"
 
 void le_mapa(MAPA *m){
     FILE * f;
@@ -49,10 +50,6 @@ void imprime_mapa(MAPA * m){
     }
 }
 
-int acabou(){
-    return 1;
-}
-
 int encontra_personagem(MAPA *m, POSICAO *posicao, char personagem){
 
     for(int cont_linha = 0; cont_linha < m->linha; cont_linha++){
@@ -73,8 +70,35 @@ int encontra_personagem(MAPA *m, POSICAO *posicao, char personagem){
 
 }
 
-void anda_pelo_mapa(MAPA *m, int linha_atual, int coluna_atual, int linha_destino, int coluna_destino){
+/*void anda_pelo_mapa(MAPA *m, int linha_atual, int coluna_atual, char caminho){
 
+    int linha_destino = linha_atual;
+    int coluna_destino = coluna_atual;
 
+    switch (caminho)
+    {
+    case 'w':
+        m->matriz[linha_destino -1] [ coluna_destino] = JOGADOR;
+        break;
+    
+    case 's':
+        m->matriz [linha_destino + 1] [coluna_destino] = JOGADOR;
+        break;
+
+    case 'a':
+        m->matriz [linha_destino] [coluna_destino - 1] = JOGADOR;
+        break;
+
+    case 'd':
+        m->matriz [linha_destino] [coluna_destino] = JOGADOR;
+        break;
+
+    }
+
+    m->matriz [linha_atual] [coluna_atual] = '.';
+
+    linha_atual = linha_destino;
+    coluna_atual = coluna_destino;
 
 }
+*/
