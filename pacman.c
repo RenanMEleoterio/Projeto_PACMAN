@@ -15,16 +15,13 @@ int direcao_valida(char direcao){
 void move(char caminho){
     if(!direcao_valida(caminho)) return;
 
-    int linha;
-    int coluna;
-
     for(int i = 0; i < mapa.linha; i++){
         for (int j = 0; j < mapa.coluna; j++)
         {
             if(mapa.matriz [i] [j] == JOGADOR){
                 
-                linha = i;
-                coluna = j;
+                posicao.linha = i;
+                posicao.coluna = j;
                 break;
             }
         }
@@ -34,22 +31,22 @@ void move(char caminho){
     switch (caminho)
     {
     case CIMA:
-        mapa.matriz[linha -1] [coluna] = JOGADOR;
+        mapa.matriz[posicao.linha -1] [posicao.coluna] = JOGADOR;
         break;
 
     case BAIXO:
-        mapa.matriz[linha + 1] [coluna] = JOGADOR;
+        mapa.matriz[posicao.linha + 1] [posicao.coluna] = JOGADOR;
         break;
     
     case ESQUERDA:
-        mapa.matriz[linha] [coluna -1] = JOGADOR;
+        mapa.matriz[posicao.linha] [posicao.coluna -1] = JOGADOR;
         break;
 
     case DIREITA:
-        mapa.matriz[linha] [coluna +1] = JOGADOR;
+        mapa.matriz[posicao.linha] [posicao.coluna +1] = JOGADOR;
     }
 
-    mapa.matriz[linha] [coluna] = '.';
+    mapa.matriz[posicao.linha] [posicao.coluna] = '.';
 
 }
 
