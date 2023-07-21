@@ -13,6 +13,7 @@ int direcao_valida(char direcao){
 }
 
 void move(char caminho){
+    
     if(!direcao_valida(caminho)) return;
 
     int proxima_linha = posicao.linha;
