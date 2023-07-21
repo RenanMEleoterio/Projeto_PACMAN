@@ -1,4 +1,5 @@
 #define JOGADOR '@'
+#define VAZIO '.'
 
 struct mapa
 {
@@ -23,4 +24,4 @@ void aloca_mapa(MAPA *m);
 void libera_mapa(MAPA *m);
 void imprime_mapa(MAPA *m);
 int encontra_personagem(MAPA *m, POSICAO *posicao, char personagem);
-void anda_pelo_mapa();
+void anda_pelo_mapa(MAPA *m, int linha_atual, int coluna_atual, char caminho);
