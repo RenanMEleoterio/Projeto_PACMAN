@@ -69,3 +69,12 @@ int encontra_personagem(MAPA *m, POSICAO *posicao, char personagem){
     return 0;
 
 }
+
+int anda_no_mapa(MAPA *m, int linha_atual, int coluna_atual, int proxima_linha, int proxima_coluna){
+
+    char personagem = m->matriz[linha_atual] [coluna_atual];
+
+    m->matriz[proxima_linha] [proxima_coluna] = personagem;
+    m->matriz[linha_atual] [coluna_atual] = VAZIO;
+
+}
