@@ -78,3 +78,14 @@ int anda_no_mapa(MAPA *m, int linha_atual, int coluna_atual, int proxima_linha, 
     m->matriz[linha_atual] [coluna_atual] = VAZIO;
 
 }
+
+int posicao_vazia(MAPA *m,int proxima_linha, int proxima_coluna){
+
+    if(m->matriz[proxima_linha] [proxima_coluna] == VAZIO){
+
+        return 1;
+
+    }
+
+    return 0;
+}
